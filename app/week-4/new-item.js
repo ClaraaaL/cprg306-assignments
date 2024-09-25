@@ -10,7 +10,7 @@ export default function Counter() {
   const increment = () => setQuantity(quantity + 1);
   const decrement = () => setQuantity(quantity - 1);
 
-  //never do this to increment count : const increment =() => count++;
+ 
 
   return (
     <div class="p-2 m-4 bg-white flex w-40">
