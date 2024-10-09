@@ -41,11 +41,11 @@ export default function NewItem() {
           />
         </div>
 
-        <div class="flex justify-between">
-          <div class="p-2 m-4 bg-white flex w-40 rounded-lg ">
-            <div class="flex justify-between w-full">
+        <div className="flex justify-between">
+          <div className="p-2 m-4 bg-white flex w-40 rounded-lg ">
+            <div className="flex justify-between w-full">
               <span className="text-center">{quantity}</span>
-              <div class="flex">
+              <div className="flex">
                 <button
                   className="w-8 bg-green-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-blue-400 focus:ring-opacity-75"
                   onClick={decrement}
