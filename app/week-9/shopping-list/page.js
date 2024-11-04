@@ -22,21 +22,22 @@ export default function Page() {
     const cleanedName = item.name
       .split(",")[0]
       .trim()
-      .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, "");
+      .replace(
+        /([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g,
+        ""
+      );
     setSelectedItemName(cleanedName);
   };
 
   const { user } = useUserAuth();
   const router = useRouter();
 
-
   useEffect(() => {
     if (user === null) {
-      router.push('/landing-page'); 
+      router.push("/landing-page");
     }
   }, [user, router]);
 
-  
   if (user === null) {
     return null;
   }
@@ -47,10 +48,10 @@ export default function Page() {
       <div className="flex">
         <div className="flex-1">
           <NewItem onAddItem={handleAddItem} />
-          <ItemList items={items} onItemSelect={handleItemSelect} /> 
+          <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
         <div className="flex-1">
-          <MealIdeas ingredient={selectedItemName} /> 
+          <MealIdeas ingredient={selectedItemName} />
         </div>
       </div>
     </main>
