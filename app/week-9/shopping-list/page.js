@@ -6,7 +6,7 @@ import itemsData from "./items.json";
 import { useState, useEffect } from "react";
 import MealIdeas from "./meal-ideas";
 import { useUserAuth } from "../_utils/auth-context";
-//mport { useRouter } from "next/router";
+
 
 export default function Page() {
   const [items, setItems] = useState(itemsData);
@@ -28,11 +28,11 @@ export default function Page() {
   };
 
   const { user } = useUserAuth();
-  //const router = useRouter();
+
 
   useEffect(() => {
     if (user === null) {
-      router.push("/landing-page");
+      window.location.href = "/week-9/page";
     }
   }, [user]);
 

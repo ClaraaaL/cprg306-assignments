@@ -12,7 +12,6 @@ export const getItems = async (userId) => {
   };
 
   export const addItem = async (userId, item) => {
-    const itemsRef = collection(db, `users/${userId}/items`);
-    const docRef = await addDoc(itemsRef, item);
+    const docRef = await addDoc(collection(db, `users/${userId}/items`), item);
     return docRef.id;
   };
